@@ -14,11 +14,11 @@ public class PhotoObject {
 	public static void main(String[] args) throws FileNotFoundException, MalformedURLException {
 		// TODO Auto-generated method stub
 		
-		String imgSrc = "images//newer-img.png";
+		String imgSrc = " * Insert image file path here * ";
 		ImageData data = ImageDataFactory.create(imgSrc);
 		Image image1 = new Image(data);
 		
-		String path = "/Users/danielsmagly/Desktop/itexttestpdfs/testItext.pdf";
+		String path = " * Insert file path here * ";
 		PdfWriter pdfWriter = new PdfWriter(path);
 		
 		PdfDocument pdfDocument = new PdfDocument(pdfWriter);
@@ -29,7 +29,7 @@ public class PhotoObject {
 		document.add(image1);
 		document.close();
 		
-		System.out.println("yo");
+		System.out.println(" file run complete ");
 		
 	}
 
