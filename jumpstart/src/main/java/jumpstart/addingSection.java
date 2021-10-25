@@ -35,6 +35,10 @@ public class addingSection extends SectionEventHandler{
 		PdfDocument pdf = new PdfDocument(writer); 
 		Document document = new Document(pdf);
 		
+		//Making the directory (in case it doesn't exist)
+		File file = new File(dest);
+        	file.getParentFile().mkdirs();
+		
 		//Section stuffs
 		summarySection sumBase = new summarySection();
 
