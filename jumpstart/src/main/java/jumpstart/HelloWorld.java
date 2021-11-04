@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class HelloWorld 
 {
-	public static final String DEST = "results/chapter01/hello_world.pdf";
+	public static final String DEST = "jumpstart/results/hello_world.pdf";
 	
 	public static void main(String args[]) throws IOException 
 	{
@@ -28,7 +28,7 @@ public class HelloWorld
 		
 		Document document = new Document(pdf);
 		
-		document.add(new Paragraph("csc131 team very awesome"));
+		document.add(new Paragraph("12398172340721097401240612"));
 		
 		document.add(new Paragraph("csc131 team very awesome 2"));
 		
