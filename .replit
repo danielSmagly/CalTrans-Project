@@ -1,2 +1,2 @@
-language = "bash"
-run = ""
+language = "java"
+run = "java jumpstart"
