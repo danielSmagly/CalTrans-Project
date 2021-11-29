@@ -6,7 +6,11 @@ class PrintToPDF extends Component {
   render() {
     return (
       <div>
-        <Button variant="contained" endIcon={<PictureAsPdfIcon/>} onClick={() => window.print()}>Save as PDF </Button>
+        <Button variant="contained"
+                endIcon={<PictureAsPdfIcon/>} 
+                onClick={() => window.print()}>
+                  Save as PDF 
+        </Button>
       </div>
     )
   }
