@@ -10,19 +10,18 @@ import styled from 'styled-components';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
-import CssBaseline from '@mui/material/CssBaseline';
-
-import PageHeader from './PageHeader'; //Alter to wherever PageHeader is
 
 const Item1 = () => {
     const [category, setCategory] = React.useState('');
     const handleChangeC = (event) => {
         setCategory(event.target.value);
     }
+    
     const [question, setQuestion] = React.useState('');
     const handleChangeQ = (event) => {
         setQuestion(event.target.value);
     }
+    
     return(
         <>
             <TitleStyle>
@@ -118,10 +117,7 @@ export default function AdminReview() {
     };
     return (
         <>
-            <CssBaseline />
-
             <Box sx={{ flexGrow: 1 }}>
-                <PageHeader pageNumber={3}/>
                 <Grid container spacing={1}>
                     <Grid item xs={12}>
                         <Item1 />
