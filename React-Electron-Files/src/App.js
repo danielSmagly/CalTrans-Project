@@ -11,7 +11,8 @@ import BMPReview from './BMPReview';
 import ImageUpload from './ImageUpload'
 import Page5 from './Page5';
 import Page2 from './Page2';
-import AdminReview from './AdminReview';
+import Counter from './Counter';
+import CounterDos from './CounterDos';
 
 
 function App({children}) {
@@ -27,13 +28,15 @@ function App({children}) {
           <ProjectDescription/>
           <br/><br/>
           <br/><br/>
+          <Counter/>
+          <br/><br/>
+          <br/><br/>
+          <CounterDos/>
+          <br/><br/>
+          <br/><br/>
           <PageHeader pageNumber={2}/>
           <Page2/>
           </Formater>
-          <br/><br/>
-          <br/><br/>
-          <PageHeader pageNumber={3}/>
-          <AdminReview />
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={4}/>
