@@ -6,9 +6,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import styled from 'styled-components';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import PrintToPDF from './PrintToPDF';
+import BMPReview from './BMPReview';
+import ImageUpload from './ImageUpload'
+import Page5 from './Page5';
+import Page2 from './Page2';
 
 
 function App({children}) {
+  
   return (
     <>
       
@@ -19,11 +25,28 @@ function App({children}) {
           <br/>
           <ProjectDescription/>
           <br/><br/>
+          <br/><br/>
+          <PageHeader pageNumber={2}/>
+          <Page2/>
           </Formater>
-          <Formater>
+          <br/><br/>
+          <br/><br/>
+          <PageHeader pageNumber={4}/>
+          <BMPReview/>
+          <ImageUpload/>
+          <br/>
+          <br/>
           <LocalizationProvider dateAdapter={DateAdapter}>{children}</LocalizationProvider>
           <DateAndVerification/>
-          </Formater>
+          <br/>
+          <br/>
+          <br/>
+          <PageHeader pageNumber={5}/>
+          <Page5/>
+          <br/>
+          <br/>
+          <PrintToPDF/>
+          
         </PageSize>
     </>
   );
@@ -32,7 +55,7 @@ function App({children}) {
 const PageSize = styled.div`
 
 text-align: left;
-margin: 25px 100px ;
+margin: 25px 50px ;
 padding: 0px;
 `;
 
