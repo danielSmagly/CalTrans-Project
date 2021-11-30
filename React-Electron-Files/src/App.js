@@ -32,6 +32,7 @@ function App({children}) {
           </Formater>
           <br/><br/>
           <br/><br/>
+          <PageHeader pageNumber={3}/>
           <AdminReview />
           <br/><br/>
           <br/><br/>
