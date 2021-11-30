@@ -11,6 +11,7 @@ import BMPReview from './BMPReview';
 import ImageUpload from './ImageUpload'
 import Page5 from './Page5';
 import Page2 from './Page2';
+import AdminReview from './AdminReview';
 
 
 function App({children}) {
@@ -29,6 +30,9 @@ function App({children}) {
           <PageHeader pageNumber={2}/>
           <Page2/>
           </Formater>
+          <br/><br/>
+          <br/><br/>
+          <AdminReview />
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={4}/>
