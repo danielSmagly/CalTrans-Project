@@ -13,7 +13,8 @@ import Page5 from './Page5';
 import Page2 from './Page2';
 import Counter from './Counter';
 import CounterDos from './CounterDos';
-
+import ARTitle from './ARTitle';
+import AdminReview from './AdminReview';
 
 function App({children}) {
   
@@ -37,6 +38,11 @@ function App({children}) {
           <PageHeader pageNumber={2}/>
           <Page2/>
           </Formater>
+          <br/><br/>
+          <br/><br/>
+          <PageHeader pageNumber={3}/>
+          <ARTitle />
+          <AdminReview />
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={4}/>
