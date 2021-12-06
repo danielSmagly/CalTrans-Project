@@ -7,14 +7,18 @@ import styled from 'styled-components';
 import DateAdapter from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import PrintToPDF from './PrintToPDF';
-import BMPReview from './BMPReview';
+import CreateNewBMPReview from './CreateNewBMPReview';
 import ImageUpload from './ImageUpload'
 import Page5 from './Page5';
 import Page2 from './Page2';
 import Counter from './Counter';
 import CounterDos from './CounterDos';
-import ARTitle from './ARTitle';
 import AdminReview from './AdminReview';
+import Table from './Table';
+import SiteConditions from './SiteConditions'
+import KeyPersonnel from './KeyPersonnel'
+import RegulatoryStatus from './RegulatoryStatus';
+
 
 function App({children}) {
   
@@ -28,11 +32,10 @@ function App({children}) {
           <br/>
           <ProjectDescription/>
           <br/><br/>
-          <br/><br/>
-          <Counter/>
-          <br/><br/>
-          <br/><br/>
-          <CounterDos/>
+          <Table/>
+          <KeyPersonnel/>
+          <SiteConditions/>
+          <RegulatoryStatus/>
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={2}/>
@@ -41,12 +44,11 @@ function App({children}) {
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={3}/>
-          <ARTitle />
           <AdminReview />
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={4}/>
-          <BMPReview/>
+          <CreateNewBMPReview/>
           <ImageUpload/>
           <br/>
           <br/>
@@ -60,14 +62,12 @@ function App({children}) {
           <br/>
           <br/>
           <PrintToPDF/>
-          
         </PageSize>
     </>
   );
 }
 
 const PageSize = styled.div`
-
 text-align: left;
 margin: 25px 50px ;
 padding: 0px;
