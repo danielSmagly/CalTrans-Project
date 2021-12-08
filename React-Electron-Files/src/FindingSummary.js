@@ -7,7 +7,15 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
-import BMPReview from './test'
+import AdminReview from './AdminReview';
+import NewAR from './NewAdminReview';
+import Child from './ObservationChild';
+import Parent from './ObservationParent';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
+
+
 
 const Item1 = () => {
     return (
@@ -29,74 +37,78 @@ const Item2 = () => {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+    const [date, setDate] = React.useState();
+
+    const handleChangeT = (newValue) => {
+        setDate(newValue);
+    };
+
+    const [TF, setTF] = React.useState('');
+    const handleChangeY = (event) => {
+        setTF(event.target.value)
+    }
+
+    var Yes, No = null;
+    if (TF.includes(date)) {
+        Yes = "Yes"
+    } else if (TF.includes("")) {
+        No = "No"
+    }
+
     return (
         <>
             <Grid container spacing={1}>
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
-                        <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
-                            <InputLabel id="demo-simple-select-label" fontSize="1">Finding No.</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={age}
+                        <FormControl fullWidth>
+                            <TextField
                                 label="FINDING NO."
-                                onChange={handleChange}
+                                multiline
+                                rows={1}
+                                defaultValue = {"A1"}
+                                disabled
                             >
-                                <MenuItem value={10}>A1</MenuItem>
-                                <MenuItem value={20}>A2</MenuItem>
-                                <MenuItem value={30}>A3</MenuItem>
-                            </Select>
+                            </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
 
                 <Grid item xs={6.2}>
                     <Box sx={{ minWidth: 400 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
-                            <InputLabel id="demo-simple-select-label" fontSize="1">Finding Description Summary</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={age}
-                                label="BMP CATEGORY"
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={10}>Description 1</MenuItem>
-                                <MenuItem value={20}>Description 2</MenuItem>
-                                <MenuItem value={30}>Description 3</MenuItem>
-                            </Select>
+                    <FormControl fullWidth>
+                            <Child/>
+                            <Parent/>
                         </FormControl>
                     </Box>
                 </Grid>
 
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
+                    <FormControl fullWidth>
                     <TextField
-                id="outlined-multiline-static"
                 label="Corrected?"
-                multiline
-                rows={1}
-                placeholder="Yes/No"
-                fullWidth
-                />
+                value = {TF}
+                onChange={handleChangeY}
+                disabled
+                >
+                    <MenuItem value={10}> {No} </MenuItem>
+                    <MenuItem value={20}> {Yes} </MenuItem>
+
+                            </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
 
                 <Grid item xs={2}>
                     <Box sx={{ minWidth: 240 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
-                    <TextField
-                id="outlined-multiline-static"
-                label="Date of Corrective Action Completion"
-                multiline
-                rows={1}
-                placeholder="Date goes here"
-                fullWidth
-                />
-                        </FormControl>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <MobileDatePicker
+                                label="Date Completed"
+                                value={date}
+                                onChange={handleChangeT}
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
                     </Box>
                 </Grid>
             </Grid>
@@ -125,7 +137,7 @@ const Item4 = () => {
             <Grid container spacing={1}>
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
-                        <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
+                        <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">Finding No.</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
@@ -144,7 +156,7 @@ const Item4 = () => {
 
                 <Grid item xs={6.2}>
                     <Box sx={{ minWidth: 400 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
+                    <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">Finding Description Summary</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
@@ -163,7 +175,7 @@ const Item4 = () => {
 
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
+                    <FormControl fullWidth>
                     <TextField
                 id="outlined-multiline-static"
                 label="Corrected?"
