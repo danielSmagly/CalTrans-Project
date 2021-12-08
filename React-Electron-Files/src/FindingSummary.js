@@ -48,11 +48,11 @@ const Item2 = () => {
         setTF(event.target.value)
     }
 
-    var Yes, No = null;
+    var label= null;
     if (TF.includes(date)) {
-        Yes = "Yes"
+        label = "Yes"
     } else if (TF.includes("")) {
-        No = "No"
+        label = "No"
     }
 
     return (
@@ -86,13 +86,10 @@ const Item2 = () => {
                     <Box sx={{ minWidth: 100 }}>
                     <FormControl fullWidth>
                     <TextField
-                label="Corrected?"
                 value = {TF}
                 onChange={handleChangeY}
                 disabled
                 >
-                    <MenuItem value={10}> {No} </MenuItem>
-                    <MenuItem value={20}> {Yes} </MenuItem>
 
                             </TextField>
                         </FormControl>
