@@ -39,7 +39,7 @@ export default function BMPReview() {
         TypeQuestion6 = "SS-6: Straw Mulch"
         TypeQuestion7 = "SS-7: Geotextiles, Plastic Covers, Erosion Control Blankets/Mats"
         TypeQuestion8 = "SS-8: Wood Mulching"
-        TypeQuestion9 = "SS-9: Earth Dikes/Drainage Swales _Lined Swales"
+        TypeQuestion9 = "SS-9: Earth Dikes/Drainage Swales/Lined Ditches"
         TypeQuestion10 = "SS-10: Outlet Protection/Velocity Dissipatin Devices"
         TypeQuestion11 = "SS-11: Slope Drains"
         TypeQuestion12 = "SS-12: Streambank Stabilization"
@@ -134,7 +134,7 @@ export default function BMPReview() {
         ChecklistQ2 = "SS-9.2: Are the earth dikes/drainage swales/lined ditches installed correctly?"
         ChecklistQ3 = "SS-9.3: Are the earth dikes/drainage swales/lined ditches made of the correct materials?"
         ChecklistQ4 = "SS-9.4: Are the earth dikes/drainage swales/lined ditches maintained correctly?"
-    } else if (type === "SS-10: Outlet Protection/Velocity Dissipation Devices") {
+    } else if (type === "SS-10: Outlet Protection/Velocity Dissipatin Devices") {
         ChecklistQ1 = "SS-10.1: Are the outlet protection/velocity dissipation devices used for the correct application?"
         ChecklistQ2 = "SS-10.2: Are the outlet protection/velocity dissipation devices installed correctly?"
         ChecklistQ3 = "SS-10.3: Are the outlet protection/velocity dissipation devices made of the correct materials?"
@@ -153,7 +153,7 @@ export default function BMPReview() {
 
 
     // ------ Sediment Control ------ //
-    else if (type === "SC-1: Temporary Silt Fence") {
+    else if (type === "SC-1: Temporary Slit Fence") {
         ChecklistQ1 = "SC-1.1: Is the temporary silt fence used for the correct application?"
         ChecklistQ2 = "SC-1.2: Is the temporary silt fence installed correctly?"
         ChecklistQ3 = "SC-1.3: Is the temporary reinforced silt fence installed correctly?"
@@ -451,7 +451,7 @@ export default function BMPReview() {
 
                                 {category === 'Soil Stabilization' ? (
 
-                                    <MenuItem value={"SS-9: Earth Dikes/Drainage Swales _Lined Swales"} >{TypeQuestion9}</MenuItem>
+                                    <MenuItem value={"SS-9: Earth Dikes/Drainage Swales/Lined Ditches"} >{TypeQuestion9}</MenuItem>
 
                                 ) : null}
 
@@ -808,3 +808,4 @@ const TitleStyle = styled.div`
     font-size: 1.10rem;
     font-weight: 500;
 `;
+
