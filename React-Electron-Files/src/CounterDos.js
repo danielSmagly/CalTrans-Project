@@ -74,7 +74,14 @@ export default function CounterDos() {
 
   const style = {
 
-    fontSize: 20
+    fontSize: 20,
+    
+  }
+
+  const style2 = {
+
+    fontSize: 20,
+    padding: '0px 45.5px 0px 0px'
   }
   return (
     <>
@@ -85,7 +92,7 @@ export default function CounterDos() {
         <Table sx={{ minWidth: 100 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Categories</TableCell>
+              <TableCell align="left">CATEGORY</TableCell>
               <TableCell align="right">Number of Findings</TableCell>
             </TableRow>
           </TableHead>
@@ -224,7 +231,7 @@ export default function CounterDos() {
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={0} columns={8}>
                     <Grid item xs={8}>
-                      <span style={style}> {countTC + countSS + countSC + countWE + countNS + countWM} </span>
+                      <span style={style2}> {countTC + countSS + countSC + countWE + countNS + countWM} </span>
                     </Grid>
                   </Grid>
                 </Box>}
