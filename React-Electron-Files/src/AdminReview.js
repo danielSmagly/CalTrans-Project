@@ -58,21 +58,30 @@ const Item1 = () => {
 
     return(
         <>
-            <Box sx ={{mt: 1}}>
+            <Box sx ={{flexGrow: 1, mt: 1}}>
+                <Grid container spacing={1} columns={16}>
+                    <Grid item xs={2}>
+                    <FormControl fullWidth> 
                 <TextField
                     label="Finding No."
-                    style ={{width: '12.5%'}}
+                    
                     id="outlined-multiline-static"
                     multiline
                     rows={1}
                     defaultValue = {"A1"}
                     disabled
+                    fullWidth
                 />
+                </FormControl>
 
-                <FormControl sx={{width: '62.5%'}}> 
+                </Grid>
+
+                <Grid item xs={9}>
+                    
+                <FormControl fullWidth> 
                     <InputLabel id="demo-simple-select-label" fontSize="1">Administrative Category</InputLabel>
                     <Select
-                        label="Category"
+                        label="Administrative Category"
                         id="demo-simple-select-label"
                         value={category}
                         onChange={handleChangeC}
@@ -85,8 +94,12 @@ const Item1 = () => {
                         <MenuItem value={"Tahoe CGP-Specific Requirements"}>Tahoe CGP-Specific Requirements</MenuItem>
                     </Select>
                 </FormControl>
+                </Grid>
 
-                <FormControl  sx={{width: '25%'}}>
+
+                <Grid item xs={5}>
+                    
+                <FormControl fullWidth> 
                     <InputLabel id="demo-simple-select-label" fontSize="1">Checklist Question No.</InputLabel>
                     <Select
                         label="Checklist Question No."
@@ -99,8 +112,12 @@ const Item1 = () => {
                         <MenuItem value={30}> {QList3} </MenuItem>
                         <MenuItem value={40}> {QList4} </MenuItem>
                     </Select>
-                </FormControl>
+                    </FormControl>
+                
+                </Grid>
+                </Grid>
             </Box>
+
 
             <Box sx ={{mt: 1}}>
                 <TextField
@@ -134,12 +151,13 @@ const Item1 = () => {
                     placeholder="Enter Standard"
                 />
             </Box>
-
+            <br/>
             <CAStyle>
                 <p1>
                     Corrective Action Taken:
                 </p1>
             </CAStyle>
+            <br/>
         </>
     )
 }
