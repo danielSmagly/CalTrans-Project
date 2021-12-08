@@ -77,18 +77,24 @@ export default function Counter() {
         fontSize: 20
     }
 
+    const style2 = {
+
+        fontSize: 20,
+        padding: '0px 45.5px 0px 0px'
+      }
+
     return (
         <>
 
 
             <TitleStyle>
-                <p1>STORMWATER CONTRACT ADMINISTRATION</p1>
+                <p1> STORMWATER CONTRACT ADMINISTRATION</p1>
             </TitleStyle>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 100 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell align="left">Categories</TableCell>
+                            <TableCell align="left">CATEGORY</TableCell>
                             <TableCell align="right">Number of Findings</TableCell>
                         </TableRow>
                     </TableHead>
@@ -227,7 +233,7 @@ export default function Counter() {
                                 <Box sx={{ flexGrow: 1 }}>
                                     <Grid container spacing={0} columns={8}>
                                         <Grid item xs={8}>
-                                            <span style={style}> {countTSR + countPPS + countTRN + countSMA + countMAR + countATS} </span>
+                                            <span style={style2}> {countTSR + countPPS + countTRN + countSMA + countMAR + countATS}  </span>
                                         </Grid>
                                     </Grid>
                                 </Box>}
@@ -245,14 +251,5 @@ const TitleStyle = styled.div`
     background-color: #abc0d4;
     font-size: 1.10rem;
     font-weight: 500;
-    
-    
-`;
 
-const TitleStyleYes = styled.div`
-    background-color: #abc0d4;
-    font-size: 1.10rem;
-    font-weight: 500;
-    
-    
 `;
