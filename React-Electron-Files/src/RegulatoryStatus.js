@@ -2,11 +2,18 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import FormControl from '@mui/material/FormControl';
+import styled from 'styled-components';
+import Select from '@mui/material/Select';
+import Chip from '@mui/material/Chip';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
 
 const Item1 = () => {
   return (
     <>
-        <TitleStyle>REGULATORY STATUS</TitleStyle>
+        <TitleStyle><p1>REGULATORY STATUS</p1></TitleStyle>
     </>
   );
 }
@@ -15,9 +22,9 @@ const Item2 = () => {
   return(
     <>
       <Grid container spacing ={1}>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Box sx={{minWidth: 100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth >
               <TextField
               id = "outlined-mutiline-static"
               label = "SWPPP OR WPCP"
@@ -30,9 +37,9 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={8.6}>
+        <Grid item xs={8}>
           <Box sx={{minWidth:100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth >
               <TextField
               id = "outlined-mutiline-static"
               label = "RWQCB(S)"
@@ -46,12 +53,12 @@ const Item2 = () => {
         </Grid>
 
         
-        <Grid item xs={10.6}>
+        <Grid item xs={11}>
           <Box sx={{minWidth: 100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth sx={{mt: 0.6}} >
               <TextField
               id = "outlined-mutiline-static"
-              label = "PLACS(PERMITS,LICENSES,AGREEMENTS,CERTIFICATIONS)SPECIFYING TEMPORARY BMP REQIREMENTS"
+              label = "PLACS (PERMITS,LICENSES,AGREEMENTS,CERTIFICATIONS)SPECIFYING TEMPORARY BMP REQIREMENTS"
               multiline
               rows={1}
               placeholder="BODIES OF WATER HERE"
