@@ -39,7 +39,7 @@ function App({children}) {
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={2}/>
-          <Page2/>
+          <FindingSummary/>
           </Formater>
           <br/><br/>
           <br/><br/>
