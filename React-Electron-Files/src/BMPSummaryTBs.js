@@ -28,17 +28,12 @@ export default function BMPSummaryTBs() {
             setAge(event.target.value);
         };
 
-        var YN = "No"
-        if (date != null) {
-            YN = "Yes"
-        }
-
     return (
         <>
       <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={1}>
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
+      <Grid container spacing={1} columns={16}>
+                <Grid item xs={2}>
+                    
                         <FormControl fullWidth>
                             <TextField
                                 label="FINDING NO."
@@ -49,11 +44,11 @@ export default function BMPSummaryTBs() {
                             >
                             </TextField>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
-                <Grid item xs={6.2}>
-                    <Box sx={{ minWidth: 400 }}>
+                <Grid item xs={9}>
+                    
                     <FormControl fullWidth>
                     <TextField
                          label = "Finding Description Summary"
@@ -62,26 +57,29 @@ export default function BMPSummaryTBs() {
                           >
                              </TextField>
                         </FormControl>
-                    </Box>
-                </Grid>
-
-
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
-                    <FormControl fullWidth>
-                    <TextField
-                value={YN}
-                label = "Corrected?"
-                onChange={handleChange}
-                >
-                            </TextField>
-                        </FormControl>
-                    </Box>
+                    
                 </Grid>
 
 
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 240 }}>
+                    
+                    <FormControl fullWidth>
+                    <Select
+                value={age}
+                label = "Corrected?"
+                onChange={handleChange}
+                >
+                    <MenuItem value={10}>Yes</MenuItem>
+                    <MenuItem value={20}>No</MenuItem>
+                    
+                            </Select>
+                        </FormControl>
+                    
+                </Grid>
+
+
+                <Grid item xs={3}>
+                    
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <MobileDatePicker
                                 label="Date Completed"
@@ -90,7 +88,7 @@ export default function BMPSummaryTBs() {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
-                    </Box>
+                    
                 </Grid>
             </Grid>
       </Box>
