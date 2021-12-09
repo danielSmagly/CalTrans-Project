@@ -8,7 +8,6 @@ import Grid from '@mui/material/Grid';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
-import ParentToChild from './ParentToChild/ParentToChild'
 
 export default function AdminSummaryTBs() {
     
@@ -51,7 +50,12 @@ export default function AdminSummaryTBs() {
                 <Grid item xs={6.2}>
                     <Box sx={{ minWidth: 400 }}>
                     <FormControl fullWidth>
-                            <ParentToChild/>
+                    <TextField
+                         label = "Finding Description Summary"
+                         multiline
+                         fullWidth
+                          >
+                             </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
