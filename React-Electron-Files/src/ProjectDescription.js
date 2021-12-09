@@ -10,14 +10,20 @@ import Select from '@mui/material/Select';
 const Item1 = () => {
   return (
     <>
+    <Grid container spacing={0} columns={8}>
+          <Grid item xs={8}>
+                <FormControl fullWidth> 
       <TextField
         id="outlined-multiline-static"
         label="PROJECT DESCRIPTION"
         multiline
         rows={4}
         placeholder="Enter Project Description"
-        fullWidth
+        
       />
+      </FormControl>
+      </Grid>
+      </Grid>
     </>
   )
 };
@@ -35,7 +41,8 @@ const Item2 = () => {
       <Box sx={{ ml: 1 }}>
         <Grid container spacing={1} columns={8}>
           <Grid item xs={6}>
-            <TextField style={{ minWidth: '25rem' }}
+                <FormControl fullWidth> 
+            <TextField 
               id="outlined-multiline-static"
               label="CONTRACT NUMBER/CO/RTE/PM"
               multiline
@@ -43,6 +50,7 @@ const Item2 = () => {
               placeholder="Enter Contract Number/CO/RTE/PM"
               fullWidth
             />
+            </FormControl>
           </Grid>
 
           <Grid item xs={2}>
@@ -72,7 +80,7 @@ const Item2 = () => {
           </Grid>
 
           <Grid item xs={3}>
-            <TextField style={{ minWidth: '10rem' }}
+            <TextField 
               id="outlined-multiline-static"
               label="WDID NUMBER"
               multiline
@@ -82,7 +90,7 @@ const Item2 = () => {
             />
           </Grid>
           <Grid item xs={5}>
-            <TextField style={{ minWidth: '18.5rem' }}
+            <TextField 
               id="outlined-multiline-static"
               label="PROJECT NAME"
               multiline
