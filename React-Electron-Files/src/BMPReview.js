@@ -350,7 +350,7 @@ export default function BMPReview() {
             <br />
             <Grid container spacing={1}>
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 130 }}>
+                    
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">FIND NO.</InputLabel>
                             <Select
@@ -360,13 +360,13 @@ export default function BMPReview() {
                             >
                             </Select>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
 
 
                 <Grid item xs={3}>
-                    <Box sx={{ minWidth: 300 }}>
+                    
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">BMP CATEGORY</InputLabel>
                             <Select
@@ -385,13 +385,13 @@ export default function BMPReview() {
                                 <MenuItem value={'Waste Management'}>Waste Management</MenuItem>
                             </Select>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
 
 
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 130 }}>
+                    
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">BMP TYPE</InputLabel>
                             <Select
@@ -734,11 +734,11 @@ export default function BMPReview() {
 
                             </Select>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 130 }}>
+                    
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label" fontSize="1">CHECKLIST Q. NUM</InputLabel>
                             <Select
@@ -756,25 +756,21 @@ export default function BMPReview() {
                                 <MenuItem value={'6'}>{ChecklistQ6}</MenuItem>
                             </Select>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
 
                 <Grid item xs={3}>
-                    <Box sx={{ minWidth: 300 }}>
-                        <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label" fontSize="1">LOCATION</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-
-                                label="LOCATION"
-
-                            >
-
-                            </Select>
-                        </FormControl>
-                    </Box>
+                <FormControl fullWidth>
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="LOCATION"
+                            multiline
+                            rows={1}
+                            placeholder="Enter Location"
+                            
+                        />
+                    </FormControl>
                 </Grid>
 
             </Grid>
