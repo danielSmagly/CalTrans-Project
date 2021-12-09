@@ -8,13 +8,13 @@ const BPMReview = loadable(() => import('./BMPReview'))
 
 export default function InitBmpReview() {
 
-    const [loadPBMPR, setLPBMPR] = React.useState(0);
+    const [loadPBMPR, setLPBMPR] = React.useState(() => {
+        return 0
+    })
+
     return (
         <div>
-            
-            <p>Click button to load dynamic component</p>
-            
-            <Button variant="text" onClick={() => setLPBMPR(1)}>
+            <Button variant="text" onClick={() => setLPBMPR(prevBMP => prevBMP + 1)}>
                 ADD BMP FINDING
             </Button>
             {loadPBMPR ? (
@@ -25,6 +25,5 @@ export default function InitBmpReview() {
             ) : null}
             <BMPReview/>
         </div>
-        
     )
 }
