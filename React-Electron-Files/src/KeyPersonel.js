@@ -2,6 +2,9 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import FormControl from '@mui/material/FormControl';
+import styled from 'styled-components';
+
 
 const Item1 = () => {
   return (
@@ -15,7 +18,7 @@ const Item2 = () => {
   return(
     <>
       <Grid container spacing ={1}>
-        <Grid item xs={6.2}>
+        <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -30,7 +33,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={4.6}>
+        <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -46,7 +49,7 @@ const Item2 = () => {
         </Grid>
 
         
-        <Grid item xs={6.2}>
+        <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -61,7 +64,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={4.6}>
+        <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -76,7 +79,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={10.8}>
+        <Grid item xs={16}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -91,7 +94,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={6.2}>
+        <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -106,7 +109,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={4.6}>
+        <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
               <TextField
@@ -131,11 +134,11 @@ const Item2 = () => {
 export default function KeyPersonnel() {
   return(
     <Box sx={{flexGrow: 1}}>
-      <Grid container spacing={2} columns={11}>
-        <Grid item xs={12}>
+      <Grid container spacing={2} columns={16}>
+        <Grid item xs={16}>
           <Item1/>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={16}>
           <Item2/>
         </Grid>
       </Grid>
