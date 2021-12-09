@@ -171,24 +171,24 @@ const Item1 = () => {
 
             <Box sx ={{mt: 1}}>
                 <TextField
-                    label="Standard Reference"
+                    
                     fullWidth
                     id="outlined-multiline-static"
                     multiline
                     rows={1}
-                    placeholder="Enter Standard Reference"
+                    placeholder="Standard Reference"
                     value = {autoStandRef}
                 />
             </Box>
 
             <Box sx ={{mt: 1}}>
                 <TextField
-                    label="Standard"
+                    
                     fullWidth
                     id="outlined-multiline-static"
                     multiline
                     rows={2}
-                    placeholder="Enter Standard"
+                    placeholder="Standard"
                     value = {autoStand}
                 />
             </Box>
