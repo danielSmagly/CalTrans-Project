@@ -12,7 +12,7 @@ export default function NewAR() {
     
     return (
         <div>
-            <Button variant="outlined" onClick={() => setAR(prevAR => prevAR + 1)}>
+            <Button variant="text" onClick={() => setAR(prevAR => prevAR + 1)}>
                 ADD ADMINISTRATIVE FINDING
             </Button>
 
