@@ -2,9 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -39,6 +37,11 @@ const Item2 = () => {
     const handleChangeT = (newValue) => {
         setDate(newValue);
     };
+    
+        var YN = "No"
+    if (date != null) {
+        YN = "Yes"
+    }
 
     return (
         <>
@@ -75,15 +78,12 @@ const Item2 = () => {
                 <Grid item xs={2}>
                     
                     <FormControl fullWidth>
-                    <Select
-                value={age}
+                    <TextField
+                value={YN}
                 label = "Corrected?"
                 onChange={handleChange}
-                >
-                    <MenuItem value={10}>Yes</MenuItem>
-                    <MenuItem value={20}>No</MenuItem>
-                    
-                            </Select>
+                    >
+                                </TextField>
                         </FormControl>
                     
                 </Grid>
@@ -128,6 +128,12 @@ const Item4 = () => {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+    
+        var YN = "No"
+    if (date != null) {
+        YN = "Yes"
+    }
+    
     return (
         <>
             <Grid container spacing={1} columns={16}>
@@ -162,14 +168,12 @@ const Item4 = () => {
                 <Grid item xs={2}>
                     
                     <FormControl fullWidth>
-                    <Select
-                value={age}
+                    <TextField
+                value={YN}
                 label = "Corrected?"
                 onChange={handleChange}
                     >
-                    <MenuItem value={10}>Yes</MenuItem>
-                    <MenuItem value={20}>No</MenuItem>
-                                </Select>
+                                </TextField>
                         </FormControl>
                     
                 </Grid>
