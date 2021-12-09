@@ -27,6 +27,11 @@ export default function AdminSummaryTBs() {
         const handleChange = (event) => {
             setAge(event.target.value);
         };
+    
+            var YN = "No"
+        if (date != null) {
+            YN = "Yes"
+        }
 
     return (
         <>
@@ -64,15 +69,12 @@ export default function AdminSummaryTBs() {
                 <Grid item xs={2}>
                     
                     <FormControl fullWidth>
-                    <Select
-                value={age}
+                    <TextField
+                value={YN}
                 label = "Corrected?"
                 onChange={handleChange}
                 >
-                    <MenuItem value={10}>Yes</MenuItem>
-                    <MenuItem value={20}>No</MenuItem>
-                    
-                            </Select>
+                            </TextField>
                         </FormControl>
                     
                 </Grid>
