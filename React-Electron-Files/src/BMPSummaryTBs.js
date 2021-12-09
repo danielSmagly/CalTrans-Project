@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -27,6 +25,11 @@ export default function BMPSummaryTBs() {
         const handleChange = (event) => {
             setAge(event.target.value);
         };
+    
+            var YN = "No"
+        if (date != null) {
+            YN = "Yes"
+        }
 
     return (
         <>
@@ -64,15 +67,12 @@ export default function BMPSummaryTBs() {
                 <Grid item xs={2}>
                     
                     <FormControl fullWidth>
-                    <Select
-                value={age}
+                    <TextField
+                value={YN}
                 label = "Corrected?"
                 onChange={handleChange}
                 >
-                    <MenuItem value={10}>Yes</MenuItem>
-                    <MenuItem value={20}>No</MenuItem>
-                    
-                            </Select>
+                            </TextField>
                         </FormControl>
                     
                 </Grid>
