@@ -74,38 +74,40 @@ const Item1 = () => {
 }
 
 const Item2 = () => {
-  const [age, setAge] = React.useState('');
-
-    const changeHandle = (event) => {
-        setAge(event.target.value);
-    };
-
   const theme = useTheme();
+  
+
+  
   const [personName, setPersonName] = React.useState([]);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
-      // On autofill we get a the stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-      
-    );
+    setPersonName(typeof value === 'string' ? value.split(',') : value);
+  };
+
+  const [personName2, setPersonName2] = React.useState([]);
+
+  const handleChange2 = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName2(typeof value === 'string' ? value.split(',') : value);
   };
   return(
     <>
       <Grid container spacing ={1}>
-      <Grid item xs={2}>
-          <Box sx={{minWidth: 100}}>
+      <Grid item xs={3}>
+          
             <FormControl fullWidth >
               <InputLabel id="demo-simple-select-label" fontSize="1">SWPPP OR WPCP</InputLabel>
               <Select
                 labeId="demo-simple-select-label"
                 id="demo-simple-select"
-                value = {age}
+                //value = {age}
                 label= "SWPPP OR WPCP"
-                onChange={changeHandle}
+                //onChange={changeHandle}
                 >
                 <MenuItem value={1}>None</MenuItem>
                 <MenuItem value={2}>SWPPP</MenuItem>
@@ -113,15 +115,16 @@ const Item2 = () => {
                 </Select>
 
             </FormControl>
-          </Box>
+          
         </Grid>
 
-        <Grid item xs={14}>
-          <Box sx={{minWidth:100}}>
+        <Grid item xs={13}>
+          
             <FormControl fullWidth >
               <InputLabel id="demo-multiple-chip-label">RWQCB(S)</InputLabel>
               <Select 
-              labelId="demo-multiple-chip-label"
+              
+              label="RWQCB(S)"
               id="demo-multiple-chip"
               multiple
               value={personName}
@@ -148,20 +151,21 @@ const Item2 = () => {
             </Select>
 
             </FormControl>
-          </Box>
+          
         </Grid>
 
         
         <Grid item xs={16}>
-          <Box sx={{minWidth: 100}}>
+          
           <FormControl fullWidth>
         <InputLabel id="demo-multiple-chip-label">PLACS</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
           multiple
-          value={personName}
-          onChange={handleChange}
+          label="PLACS"
+          value={personName2}
+          onChange={handleChange2}
           input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
@@ -176,14 +180,14 @@ const Item2 = () => {
             <MenuItem
               key={name}
               value={name}
-              style={getStyles(name, personName, theme)}
+              style={getStyles(name, personName2, theme)}
             >
               {name}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-          </Box>
+          
         </Grid>
       </Grid>
       </>
