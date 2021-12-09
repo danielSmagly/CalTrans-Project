@@ -14,6 +14,7 @@ import Parent from './ObservationParent';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
+import ObservationParent from './ObservationParent';
 
 
 
@@ -48,11 +49,15 @@ const Item2 = () => {
         setTF(event.target.value)
     }
 
-    var label= null;
-    if (TF.includes(date)) {
-        label = "Yes"
-    } else if (TF.includes("")) {
-        label = "No"
+
+    const [Test, setTest] = React.useState('');
+    const handleChangeTest = (event) => {
+        setTest(event.target.value)
+    }
+
+    var Yes, No = null;
+    if (Test.includes(date)) {
+        Yes = "Yes"
     }
 
     return (
@@ -82,19 +87,23 @@ const Item2 = () => {
                     </Box>
                 </Grid>
 
+
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
                     <FormControl fullWidth>
-                    <TextField
+                    <Select
+                defaultValue = "No"
                 value = {TF}
-                onChange={handleChangeY}
-                disabled
+                label = "Corrected?"
+                onChange={handleChangeTest}
+                
                 >
-
-                            </TextField>
+                    
+                            </Select>
                         </FormControl>
                     </Box>
                 </Grid>
+
 
                 <Grid item xs={2}>
                     <Box sx={{ minWidth: 240 }}>
@@ -204,7 +213,7 @@ const Item4 = () => {
     );
 };
 
-export default function Page2() {
+export default function FindingSummary({ObservationParent, ObservationChild}) {
     return (
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} columns={11}>
@@ -212,7 +221,7 @@ export default function Page2() {
             <Item1/>
           </Grid>
           <Grid item xs={12}>
-            <Item2/>
+            <Item2 ObsParent={ObservationParent}>{ObservationChild} </Item2>
           </Grid>
           <Grid item xs={12}>
             <Item3/>
