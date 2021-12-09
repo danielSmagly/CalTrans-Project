@@ -2,20 +2,16 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
-import AdminReview from './AdminReview';
-import NewAR from './NewAdminReview';
-import Child from './ObservationChild';
-import Parent from './ObservationParent';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
-import ObservationParent from './ObservationParent';
-
+import loadable from '@loadable/component';
+import { Suspense } from 'react';
+import Button from '@mui/material/Button';
 
 
 const Item1 = () => {
@@ -44,22 +40,6 @@ const Item2 = () => {
         setDate(newValue);
     };
 
-    const [TF, setTF] = React.useState('');
-    const handleChangeY = (event) => {
-        setTF(event.target.value)
-    }
-
-
-    const [Test, setTest] = React.useState('');
-    const handleChangeTest = (event) => {
-        setTest(event.target.value)
-    }
-
-    var Yes, No = null;
-    if (Test.includes(date)) {
-        Yes = "Yes"
-    }
-
     return (
         <>
             <Grid container spacing={1}>
@@ -81,8 +61,12 @@ const Item2 = () => {
                 <Grid item xs={6.2}>
                     <Box sx={{ minWidth: 400 }}>
                     <FormControl fullWidth>
-                            <Child/>
-                            <Parent/>
+                             <TextField
+                         label = "Finding Description Summary"
+                         multiline
+                         fullWidth
+                          >
+                             </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
@@ -92,12 +76,12 @@ const Item2 = () => {
                     <Box sx={{ minWidth: 100 }}>
                     <FormControl fullWidth>
                     <Select
-                defaultValue = "No"
-                value = {TF}
+                value={age}
                 label = "Corrected?"
-                onChange={handleChangeTest}
-                
+                onChange={handleChange}
                 >
+                    <MenuItem value={10}>Yes</MenuItem>
+                    <MenuItem value={20}>No</MenuItem>
                     
                             </Select>
                         </FormControl>
@@ -133,6 +117,12 @@ const Item3 = () => {
 };
 
 const Item4 = () => {
+    const [date, setDate] = React.useState();
+
+    const handleChangeT = (newValue) => {
+        setDate(newValue);
+    };
+
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -144,18 +134,14 @@ const Item4 = () => {
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
                         <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label" fontSize="1">Finding No.</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={age}
+                            <TextField
                                 label="FINDING NO."
-                                onChange={handleChange}
+                                multiline
+                                rows={1}
+                                defaultValue = {"B1"}
+                                disabled
                             >
-                                <MenuItem value={11}>B1</MenuItem>
-                                <MenuItem value={21}>B2</MenuItem>
-                                <MenuItem value={31}>B3</MenuItem>
-                            </Select>
+                            </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
@@ -163,18 +149,12 @@ const Item4 = () => {
                 <Grid item xs={6.2}>
                     <Box sx={{ minWidth: 400 }}>
                     <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label" fontSize="1">Finding Description Summary</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={age}
-                                label="BMP CATEGORY"
-                                onChange={handleChange}
-                            >
-                                <MenuItem value={11}>Description 1</MenuItem>
-                                <MenuItem value={21}>Description 2</MenuItem>
-                                <MenuItem value={31}>Description 3</MenuItem>
-                            </Select>
+                    <TextField
+                         label = "Finding Description Summary"
+                         multiline
+                         fullWidth
+                          >
+                        </TextField>
                         </FormControl>
                     </Box>
                 </Grid>
@@ -182,30 +162,28 @@ const Item4 = () => {
                 <Grid item xs={1.3}>
                     <Box sx={{ minWidth: 100 }}>
                     <FormControl fullWidth>
-                    <TextField
-                id="outlined-multiline-static"
-                label="Corrected?"
-                multiline
-                rows={1}
-                placeholder="Yes/No"
-                fullWidth
-                />
+                    <Select
+                value={age}
+                label = "Corrected?"
+                onChange={handleChange}
+                    >
+                    <MenuItem value={10}>Yes</MenuItem>
+                    <MenuItem value={20}>No</MenuItem>
+                                </Select>
                         </FormControl>
                     </Box>
                 </Grid>
 
                 <Grid item xs={2}>
                     <Box sx={{ minWidth: 240 }}>
-                    <FormControl fullWidth sx={{ m: 0.6 }} variant="filled">
-                    <TextField
-                id="outlined-multiline-static"
-                label="Date of Corrective Action Completion"
-                multiline
-                rows={1}
-                placeholder="Date goes here"
-                fullWidth
-                />
-                        </FormControl>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <MobileDatePicker
+                                label="Date Completed"
+                                value={date}
+                                onChange={handleChangeT}
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
                     </Box>
                 </Grid>
             </Grid>
@@ -213,7 +191,19 @@ const Item4 = () => {
     );
 };
 
-export default function FindingSummary({ObservationParent, ObservationChild}) {
+const AdminSummaryLoad = loadable(() => import('./AdminSummaryTBs'))
+const BMPSummaryLoad = loadable(() => import('./BMPSummaryTBs'))
+
+
+export default function FindingSummary() {
+    const [loadAR, setAR] = React.useState(() => {
+        return 0
+    })
+    const [LoadBMP, setBMP] = React.useState(() => {
+        return 0
+    })
+    
+
     return (
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2} columns={11}>
@@ -221,12 +211,36 @@ export default function FindingSummary({ObservationParent, ObservationChild}) {
             <Item1/>
           </Grid>
           <Grid item xs={12}>
-            <Item2 ObsParent={ObservationParent}>{ObservationChild} </Item2>
+          <div>
+            <Button variant="outlined" onClick={() => setAR(prevAR => prevAR + 1)}>
+                ADD ADMINISTRATIVE SUMMARY
+            </Button>
+            
+            {loadAR ? (
+                <Suspense fallback={<div>Loading Component...</div>}>
+                    <AdminSummaryLoad/>
+                </Suspense>
+            ) : null}
+          </div>
+          <br/>
+            <Item2/>
           </Grid>
           <Grid item xs={12}>
             <Item3/>
           </Grid>
           <Grid item xs={12}>
+          <div>
+            <Button variant="outlined" onClick={() => setBMP(prevBMP => prevBMP + 1)}>
+                ADD BMP SUMMARY
+            </Button>
+
+            {LoadBMP ? (
+                <Suspense fallback={<div>Loading Component...</div>}>
+                    <BMPSummaryLoad/>
+                </Suspense>
+            ) : null}
+         </div>
+         <br/>
             <Item4/>
           </Grid>
         </Grid>
