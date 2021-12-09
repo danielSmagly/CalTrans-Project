@@ -10,7 +10,7 @@ import PrintToPDF from './PrintToPDF';
 import CreateNewBMPReview from './CreateNewBMPReview';
 import ImageUpload from './ImageUpload'
 import Page5 from './Page5';
-import Page2 from './Page2';
+import FindingSummary from './FindingSummary';
 import Counter from './Counter';
 import CounterDos from './CounterDos';
 import AdminReview from './AdminReview';
