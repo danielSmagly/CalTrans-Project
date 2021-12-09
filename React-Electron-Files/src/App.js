@@ -18,7 +18,7 @@ import Table from './Table';
 import SiteConditions from './SiteConditions'
 import KeyPersonnel from './KeyPersonnel'
 import RegulatoryStatus from './RegulatoryStatus';
-
+import ARTitle from './ARTitle'
 
 function App({children}) {
   
@@ -44,6 +44,7 @@ function App({children}) {
           <br/><br/>
           <br/><br/>
           <PageHeader pageNumber={3}/>
+          <ARTitle />
           <AdminReview />
           <br/><br/>
           <br/><br/>
