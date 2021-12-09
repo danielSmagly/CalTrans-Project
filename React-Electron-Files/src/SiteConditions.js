@@ -27,7 +27,7 @@ const Item2 = () => {
   return(
     <>
       <Grid container spacing ={1}>
-        <Grid item xs={10}>
+        <Grid item xs={11}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth>
               <TextField
@@ -41,7 +41,7 @@ const Item2 = () => {
             </FormControl>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={7}>
             <Box sx={{ minWidth: 130 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label" fontSize="1">PROJECT RISK LEVEL</InputLabel>
@@ -61,7 +61,7 @@ const Item2 = () => {
             </Box>
           </Grid>
         
-        <Grid item xs={10}>
+        <Grid item xs={11}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth>
               <TextField
@@ -76,7 +76,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={6}>
+        <Grid item xs={7}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth >
               <TextField
@@ -91,7 +91,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={5.3}>
+        <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth>
               <TextField
@@ -106,7 +106,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={5.3}>
+        <Grid item xs={6}>
           <Box sx={{minWidth: 100}}>
             <FormControl fullWidth>
               <TextField
@@ -121,7 +121,7 @@ const Item2 = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={5.3}>
+        <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
             <FormControl fullWidth>
               <TextField
@@ -146,11 +146,11 @@ const Item2 = () => {
 export default function SiteConditions() {
   return(
     <Box sx={{flexGrow: 1}}>
-      <Grid container spacing={2} columns={16}>
-        <Grid item xs={16}>
+      <Grid container spacing={2} columns={18}>
+        <Grid item xs={18}>
           <Item1/>
         </Grid>
-        <Grid item xs={16}>
+        <Grid item xs={18}>
           <Item2/>
         </Grid>
       </Grid>
@@ -159,7 +159,7 @@ export default function SiteConditions() {
 };
 
 const TitleStyle = styled.div`
-  background-color: #abc0d4l
-  font-size: 1.10rem;
-  font-weight: 500;
+    background-color: #abc0d4;
+    font-size: 1.10rem;
+    font-weight: 500;
 `;

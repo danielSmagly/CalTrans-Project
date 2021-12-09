@@ -20,7 +20,7 @@ const Item2 = () => {
       <Grid container spacing ={1}>
         <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "IQA REVIEWER"
@@ -35,7 +35,7 @@ const Item2 = () => {
 
         <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "REVIEW DATE"
@@ -51,7 +51,7 @@ const Item2 = () => {
         
         <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "RESIDENT ENGINEER(RE)"
@@ -66,7 +66,7 @@ const Item2 = () => {
 
         <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "RE PHONE NUMBER"
@@ -81,7 +81,7 @@ const Item2 = () => {
 
         <Grid item xs={16}>
           <Box sx={{minWidth:100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "REVIEW PARTICIPANTS"
@@ -96,7 +96,7 @@ const Item2 = () => {
 
         <Grid item xs={10}>
           <Box sx={{minWidth: 100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "CONSTRUCTION COMPANY"
@@ -111,7 +111,7 @@ const Item2 = () => {
 
         <Grid item xs={6}>
           <Box sx={{minWidth:100}}>
-            <FormControl fullWidth sx={{m: 0.6}} variant = "filled">
+            <FormControl fullWidth>
               <TextField
               id = "outlined-mutiline-static"
               label = "WATER POLLUTION CONTROL MANAGER(WPCM)"
@@ -147,7 +147,7 @@ export default function KeyPersonnel() {
 };
 
 const TitleStyle = styled.div`
-  background-color: #abc0d4l
-  font-size: 1.10rem;
-  font-weight: 500;
+    background-color: #abc0d4;
+    font-size: 1.10rem;
+    font-weight: 500;
 `;
