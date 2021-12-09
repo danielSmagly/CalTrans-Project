@@ -40,16 +40,11 @@ const Item2 = () => {
         setDate(newValue);
     };
 
-    var YN = "No"
-    if (date != null) {
-        YN = "Yes"
-    }
-
     return (
         <>
-            <Grid container spacing={1}>
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
+            <Grid container spacing={1} columns={16}>
+                <Grid item xs={2}>
+                    
                         <FormControl fullWidth>
                             <TextField
                                 label="FINDING NO."
@@ -60,11 +55,11 @@ const Item2 = () => {
                             >
                             </TextField>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
-                <Grid item xs={6.2}>
-                    <Box sx={{ minWidth: 400 }}>
+                <Grid item xs={9}>
+                    
                     <FormControl fullWidth>
                              <TextField
                          label = "Finding Description Summary"
@@ -73,26 +68,29 @@ const Item2 = () => {
                           >
                              </TextField>
                         </FormControl>
-                    </Box>
-                </Grid>
-
-
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
-                    <FormControl fullWidth>
-                    <TextField
-                value={YN}
-                label = "Corrected?"
-                onChange={handleChange}
-                >
-                            </TextField>
-                        </FormControl>
-                    </Box>
+                    
                 </Grid>
 
 
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 240 }}>
+                    
+                    <FormControl fullWidth>
+                    <Select
+                value={age}
+                label = "Corrected?"
+                onChange={handleChange}
+                >
+                    <MenuItem value={10}>Yes</MenuItem>
+                    <MenuItem value={20}>No</MenuItem>
+                    
+                            </Select>
+                        </FormControl>
+                    
+                </Grid>
+
+
+                <Grid item xs={3}>
+                    
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <MobileDatePicker
                                 label="Date Completed"
@@ -101,7 +99,7 @@ const Item2 = () => {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
-                    </Box>
+                    
                 </Grid>
             </Grid>
             </>
@@ -130,17 +128,11 @@ const Item4 = () => {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
-
-    var YN = "No"
-    if (date != null) {
-        YN = "Yes"
-    }
-
     return (
         <>
-            <Grid container spacing={1}>
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
+            <Grid container spacing={1} columns={16}>
+                <Grid item xs={2}>
+                    
                         <FormControl fullWidth>
                             <TextField
                                 label="FINDING NO."
@@ -151,11 +143,11 @@ const Item4 = () => {
                             >
                             </TextField>
                         </FormControl>
-                    </Box>
+                    
                 </Grid>
 
-                <Grid item xs={6.2}>
-                    <Box sx={{ minWidth: 400 }}>
+                <Grid item xs={9}>
+                    
                     <FormControl fullWidth>
                     <TextField
                          label = "Finding Description Summary"
@@ -164,24 +156,26 @@ const Item4 = () => {
                           >
                         </TextField>
                         </FormControl>
-                    </Box>
-                </Grid>
-
-                <Grid item xs={1.3}>
-                    <Box sx={{ minWidth: 100 }}>
-                    <FormControl fullWidth>
-                    <TextField
-                value={YN}
-                label = "Corrected?"
-                onChange={handleChange}
-                    >
-                                </TextField>
-                        </FormControl>
-                    </Box>
+                    
                 </Grid>
 
                 <Grid item xs={2}>
-                    <Box sx={{ minWidth: 240 }}>
+                    
+                    <FormControl fullWidth>
+                    <Select
+                value={age}
+                label = "Corrected?"
+                onChange={handleChange}
+                    >
+                    <MenuItem value={10}>Yes</MenuItem>
+                    <MenuItem value={20}>No</MenuItem>
+                                </Select>
+                        </FormControl>
+                    
+                </Grid>
+
+                <Grid item xs={3}>
+                    
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <MobileDatePicker
                                 label="Date Completed"
@@ -190,7 +184,7 @@ const Item4 = () => {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
-                    </Box>
+                    
                 </Grid>
             </Grid>
         </>
@@ -212,13 +206,13 @@ export default function FindingSummary() {
 
     return (
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2} columns={11}>
-          <Grid item xs={12}>
+        <Grid container spacing={2} columns={16}>
+          <Grid item xs={16}>
             <Item1/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={16}>
           <div>
-            <Button variant="text" onClick={() => setAR(prevAR => prevAR + 1)}>
+            <Button variant="outlined" onClick={() => setAR(prevAR => prevAR + 1)}>
                 ADD ADMINISTRATIVE SUMMARY
             </Button>
             
@@ -231,12 +225,12 @@ export default function FindingSummary() {
           <br/>
             <Item2/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={16}>
             <Item3/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={16}>
           <div>
-            <Button variant="text" onClick={() => setBMP(prevBMP => prevBMP + 1)}>
+            <Button variant="outlined" onClick={() => setBMP(prevBMP => prevBMP + 1)}>
                 ADD BMP SUMMARY
             </Button>
 
